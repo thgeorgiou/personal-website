@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Fira+Mono&family=Inconsolata&family=Inter:wght@300;500&family=JetBrains+Mono&family=Source+Sans+Pro:wght@300;400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title-shadow {
+  text-shadow: 2px 2px #F78154, 4px 4px #706C61;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px #F78154, 4px 4px #706C61;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.box-shadow:hover {
+  box-shadow: 4px 4px #F78154, 8px 8px #706C61;
+}
