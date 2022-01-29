@@ -1,17 +1,25 @@
 <script setup lang="ts">
 const props = defineProps({
   title: String,
-  location: String,
-  period: String
+  location: {
+    type: String,
+    required: false,
+    default: ""
+  },
+  period: {
+    type: String,
+    required: false,
+    default: ""
+  }
 })
 </script>
 
 <template>
-  <div class="border-b-2 border-secondary w-full pb-4">
+  <div class="w-full pb-4">
     <div class="flex flex-row flex-wrap items-baseline">
       <h1 class="text-xl mr-auto">
         {{ props.title }}
-        <span class="font-mono">@</span>
+        <span v-if="props.location !== ''" class="font-mono">@</span>
         {{ props.location }}
       </h1>
       <h2 class="text-primary">{{ props.period }}</h2>

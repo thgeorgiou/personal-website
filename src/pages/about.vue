@@ -7,6 +7,7 @@ import AboutCard from '../components/AboutCard.vue';
 import MyPhoto from "../assets/me.jpg";
 import AboutList from '../components/AboutList.vue';
 import AboutListItem from '../components/AboutListItem.vue';
+import AboutPublication from '../components/AboutPublication.vue';
 </script>
 
 <template>
@@ -22,7 +23,7 @@ import AboutListItem from '../components/AboutListItem.vue';
       <HomeSection id="me" title="Me">
         <p>I am a self-diagnosed data hoarder, always on the lookout for data-driven challenges to solve. I started my career in web development during 2016 and since then I have tried to merge web and data science by creating insightful windows into the world of data.</p>
 
-        <p>I have a background in Electronic Engineering, a degree I choose out of fascination for anything digital and computers. I believe this insight into the inner workings of hardware lets me better understand how things work at lower levels and write better code. Occasionally in my free time, I dabble in hardware projects.</p>
+        <p>I have a background in Electronic Engineering, a degree I choose out of fascination for anything digital and computers. I believe this insight into the inner workings of hardware lets me better understand how things work at lower levels and write better code. Occasionally in my free time, I dabble in hardware projects and 3D printing. I keep an acquarium, love gardening and hiking.</p>
 
         <p>These days I focus on data-heavy projects. I enjoy the challenge of handling large amounts of data and harvesting information to provide real-time services.</p>
       </HomeSection>
@@ -52,13 +53,46 @@ import AboutListItem from '../components/AboutListItem.vue';
         title="Software Engineer"
         location="National Observatory of Athens"
         period="March 2018 - Present"
-      />
+      >
+        <AboutList class="text-lg mt-2">
+          <AboutListItem>Currently working on a global aerosol dataset produced from satellite measurements.</AboutListItem>
+          <AboutListItem>Development on data management platform for the climate change observatory of Antikythera (PANGEA).</AboutListItem>
+          <AboutListItem>
+            Developed platform & website for the collection and management of measurement data at the
+            <a
+              class="border-b-primary border-b-2"
+              href="https://askos.space.noa.gr"
+            >ESA-ASKOS</a> scientific campaign.
+          </AboutListItem>
+          <AboutListItem>Data management and job orchestration on HPC systems for PRACE projects.</AboutListItem>
+        </AboutList>
+      </AboutCard>
       <AboutCard
         title="Research Lab Member"
         location="Technological Educational Institute of Athens"
         period="March 2014 - February 2018"
-      />
+      >
+        <AboutList class="text-lg mt-2">
+          <AboutListItem>
+            Participated in the
+            <a
+              class="border-b-primary border-b-2"
+              href="https://www.hackair.eu/"
+            >hackAIR.eu</a> project as an Embedded Engineer, designing and programming hardware for citizen observation of air quality.
+          </AboutListItem>
+          <AboutListItem>Developed a CMS for keeping students up-to-date through Bluetooth LE beacons and push notifications.</AboutListItem>
+          <AboutListItem>Developed web platform for management of medical appointments in a public hospital ward.</AboutListItem>
+          <AboutListItem>
+            Participated in the
+            <a
+              class="border-b-primary border-b-2"
+              href="https://pre-tect.space.noa.gr"
+            >PRE-TECT</a> scientific campaign as an Embedded Engineer, working on wireless telemetry for radiosondes.
+          </AboutListItem>
+        </AboutList>
+      </AboutCard>
     </AboutSection>
+
     <AboutSection title="Education">
       <AboutCard
         title="MSc in Data Science"
@@ -76,6 +110,127 @@ import AboutListItem from '../components/AboutListItem.vue';
           <AboutListItem>Grade: 8.23/10</AboutListItem>
         </AboutList>
       </AboutCard>
+    </AboutSection>
+
+    <AboutSection title="Skills">
+      <AboutCard title="Programming">
+        <AboutList class="text-lg mt-2">
+          <AboutListItem>Javascript, Typescript, Node.JS</AboutListItem>
+          <AboutListItem>Vue, React</AboutListItem>
+          <AboutListItem>Python</AboutListItem>
+          <AboutListItem>C# (.net core)</AboutListItem>
+        </AboutList>
+      </AboutCard>
+      <AboutCard title="DevOps, System Administration">
+        <AboutList class="text-lg mt-2">
+          <AboutListItem>Linux</AboutListItem>
+          <AboutListItem>Docker, Podman, Nomad, SaltStack</AboutListItem>
+          <AboutListItem>Airflow, Dagster</AboutListItem>
+          <AboutListItem>Gitlab CI</AboutListItem>
+        </AboutList>
+      </AboutCard>
+    </AboutSection>
+
+    <AboutSection title="Academic Publications">
+      <AboutPublication
+        title="First demonstration of a CALIPSO-based fine-mode and coarse-mode pure-dust product"
+        year="2021"
+        authors="Proestakis Εmmanouil, Gkikas Αntonis, Alexiou Alexandros, Marinou Eleni, Georgiou Thanasis, Amiridis Vassilis"
+        type="Conference"
+      >
+        <template v-slot:location>
+          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+        </template>
+
+        <template
+          v-slot:description
+        >My contribution: Development of Python codebase for processing of satellite datasets. Optimization of existing codebase for better utilization of Numpy functions, improving performance x100 and making the project feasible.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="Satellite EO of Saharan dust mass transport towards the estimation of dust deposition fluxes along the open Atlantic Ocean"
+        year="2021"
+        authors="Emmanouil Proestakis, Antonis Gkikas, Angela Benedetti, Alexandros Alexiou, Thanasis Georgiou, Eleni Marinou, Vassilis Amiridis"
+        type="Conference"
+      >
+        <template v-slot:location>
+          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+        </template>
+
+        <template
+          v-slot:description
+        >My contribution: Development of Python codebase for processing of satellite datasets.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="Monitoring dust particle orientation with a novel polarization lidar at Athens"
+        year="2021"
+        authors="Tsekeri A, Amiridis V, Louridas A, Georgoussis G, Freudenthaler V., Metallinos S, Doxastakis G, Gasteiger J., Siomos N., Paschou P., Georgiou T., Tsaknakis G., Evangelatos C., Binietoglou I."
+        type="Conference"
+      >
+        <template v-slot:location>
+          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+        </template>
+
+        <template
+          v-slot:description
+        >My contribution: Assistance in development and orchestration of processing jobs for neural network training on HPC.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="First demonstration of a CALIPSO-based fine-mode and coarse-mode pure-dust product"
+        year="2021"
+        authors="Proestakis Εmmanouil, Gkikas Αntonis, Alexiou Alexandros, Marinou Eleni, Georgiou Thanasis, Amiridis Vassilis"
+        type="Conference"
+      >
+        <template v-slot:location>
+          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+        </template>
+
+        <template
+          v-slot:description
+        >My contribution: Development of Python codebase for processing of satellite datasets. Optimization of existing codebase for better utilization of Numpy functions, improving performance x100 and making the project feasible.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="Polarization lidar for detecting dust orientation: system design and calibration"
+        year="2021"
+        authors="Alexandra Tsekeri, Vassilis Amiridis, Alexandros Louridas, George Georgoussis, Volker Freudenthaler, Spiros Metallinos, George Doxastakis, Josef Gasteiger, Nikolaos Siomos, Peristera Paschou, Thanasis Georgiou, George Tsaknakis, Christos Evangelatos, Ioannis Binietoglou"
+        type="Journal"
+      >
+        <template v-slot:location>
+          <a href="https://doi.org/10.5194/amt-14-7453-2021">Atmospheric Measurement Techniques</a>
+        </template>
+        <template
+          v-slot:description
+        >My contribution: Assistance in neural network development and orchestration of data processing on HPC systems.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="Polarization lidar for detecting dust orientation: first measurements"
+        year="2021"
+        authors="Alexandra Tsekeri, Volker Freudenthaler, Vassilis Amiridis, George Doxastakis, Alexandros Louridas, George Georgoussis, Spiros Metallinos, Josef Gasteiger, Nikolaos Siomos, Peristera Paschou, Thanasis Georgiou, George Tsaknakis, Christos Evangelatos, Ioannis Binietoglou"
+        type="Conference"
+      >
+        <template v-slot:location>vEGU21</template>
+        <template
+          v-slot:description
+        >My contribution: Assistance in neural network development and orchestration of data processing on HPC systems.</template>
+      </AboutPublication>
+
+      <AboutPublication
+        title="Monitoring dust orientation"
+        year="2018"
+        authors="Alexandra Tsekeri, Vassilis Amiridis, Josef Gasteiger, Thanasis Georgiou, Volker Freudenthaler"
+        type="Conference"
+      >
+        <template v-slot:location>
+          <a href="https://www.events.prace-ri.eu/event/850/">EuroHPC Summit Week 2019</a>
+        </template>
+        <template
+          v-slot:description
+        >My contribution: Data management and orchestration of jobs for executing hunders of thousands of scattering simulations on HPC systems.</template>
+      </AboutPublication>
     </AboutSection>
   </div>
 </template>
