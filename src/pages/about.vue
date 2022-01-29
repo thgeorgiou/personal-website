@@ -59,10 +59,8 @@ import AboutPublication from '../components/AboutPublication.vue';
           <AboutListItem>Development on data management platform for the climate change observatory of Antikythera (PANGEA).</AboutListItem>
           <AboutListItem>
             Developed platform & website for the collection and management of measurement data at the
-            <a
-              class="border-b-primary border-b-2"
-              href="https://askos.space.noa.gr"
-            >ESA-ASKOS</a> scientific campaign.
+            <HomeLink href="https://askos.space.noa.gr">ESA-ASKOS</HomeLink>
+            {{ " " }}scientific campaign.
           </AboutListItem>
           <AboutListItem>Data management and job orchestration on HPC systems for PRACE projects.</AboutListItem>
         </AboutList>
@@ -75,19 +73,15 @@ import AboutPublication from '../components/AboutPublication.vue';
         <AboutList class="text-lg mt-2">
           <AboutListItem>
             Participated in the
-            <a
-              class="border-b-primary border-b-2"
-              href="https://www.hackair.eu/"
-            >hackAIR.eu</a> project as an Embedded Engineer, designing and programming hardware for citizen observation of air quality.
+            <HomeLink href="https://www.hackair.eu/">hackAIR.eu</HomeLink>
+            {{ " " }}project as an Embedded Engineer, designing and programming hardware for citizen observation of air quality.
           </AboutListItem>
           <AboutListItem>Developed a CMS for keeping students up-to-date through Bluetooth LE beacons and push notifications.</AboutListItem>
           <AboutListItem>Developed web platform for management of medical appointments in a public hospital ward.</AboutListItem>
           <AboutListItem>
             Participated in the
-            <a
-              class="border-b-primary border-b-2"
-              href="https://pre-tect.space.noa.gr"
-            >PRE-TECT</a> scientific campaign as an Embedded Engineer, working on wireless telemetry for radiosondes.
+            <HomeLink href="https://pre-tect.space.noa.gr">PRE-TECT</HomeLink>
+            {{ " " }}scientific campaign as an Embedded Engineer, working on wireless telemetry for radiosondes.
           </AboutListItem>
         </AboutList>
       </AboutCard>
