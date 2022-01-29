@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@babel/types", "npm:7.16.8"],
             ["@tailwindcss/typography", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:0.5.1"],
             ["@vitejs/plugin-vue", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:2.1.0"],
             ["@vue/compiler-sfc", "npm:3.2.29"],
@@ -113,6 +114,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@babel-types-npm-7.16.7-fa27eee382-df92107232.zip/node_modules/@babel/types/",
           "packageDependencies": [
             ["@babel/types", "npm:7.16.7"],
+            ["@babel/helper-validator-identifier", "npm:7.16.7"],
+            ["to-fast-properties", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.16.8", {
+          "packageLocation": "./.yarn/cache/@babel-types-npm-7.16.8-68f858fd51-4f6a187b29.zip/node_modules/@babel/types/",
+          "packageDependencies": [
+            ["@babel/types", "npm:7.16.8"],
             ["@babel/helper-validator-identifier", "npm:7.16.7"],
             ["to-fast-properties", "npm:2.0.0"]
           ],
@@ -3428,6 +3438,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["personal-website", "workspace:."],
+            ["@babel/types", "npm:7.16.8"],
             ["@tailwindcss/typography", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:0.5.1"],
             ["@vitejs/plugin-vue", "virtual:f1d86ea066bb88e07a0da6dc39316eae3af8dc8a3f786066821cf9e12fa219f7dca0d1403fe8b03bc00d8b9d5a7434b74ead72b5b605f92eeacee77ed25642c5#npm:2.1.0"],
             ["@vue/compiler-sfc", "npm:3.2.29"],

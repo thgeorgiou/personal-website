@@ -50,6 +50,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/types@npm:^7.16.8":
+  version: 7.16.8
+  resolution: "@babel/types@npm:7.16.8"
+  dependencies:
+    "@babel/helper-validator-identifier": ^7.16.7
+    to-fast-properties: ^2.0.0
+  checksum: 4f6a187b2924df70e21d6e6c0822f91b1b936fe060bc92bb477b93bd8a712c88fe41a73f85c0ec53b033353374fe33e773b04ffc340ad36afd8f647dd05c4ee1
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.6.1, @babel/types@npm:^7.8.3, @babel/types@npm:^7.9.6":
   version: 7.16.7
   resolution: "@babel/types@npm:7.16.7"
@@ -2939,6 +2949,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "personal-website@workspace:."
   dependencies:
+    "@babel/types": ^7.16.8
     "@tailwindcss/typography": ^0.5.1
     "@vitejs/plugin-vue": ^2.1.0
     "@vue/compiler-sfc": ^3.2.29
