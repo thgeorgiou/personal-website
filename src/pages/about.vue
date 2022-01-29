@@ -133,7 +133,7 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Conference"
       >
         <template v-slot:location>
-          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+          <HomeLink href="https://www.conferre.gr/allevents/comecap2020">COMECAP 2021</HomeLink>
         </template>
 
         <template
@@ -148,7 +148,7 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Conference"
       >
         <template v-slot:location>
-          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+          <HomeLink href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</HomeLink>
         </template>
 
         <template
@@ -163,7 +163,7 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Conference"
       >
         <template v-slot:location>
-          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+          <HomeLink href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</HomeLink>
         </template>
 
         <template
@@ -178,7 +178,7 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Conference"
       >
         <template v-slot:location>
-          <a href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</a>
+          <HomeLink href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</HomeLink>
         </template>
 
         <template
@@ -193,7 +193,9 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Journal"
       >
         <template v-slot:location>
-          <a href="https://doi.org/10.5194/amt-14-7453-2021">Atmospheric Measurement Techniques</a>
+          <HomeLink
+            href="https://doi.org/10.5194/amt-14-7453-2021"
+          >Atmospheric Measurement Techniques</HomeLink>
         </template>
         <template
           v-slot:description
@@ -219,7 +221,7 @@ import AboutPublication from '../components/AboutPublication.vue';
         type="Conference"
       >
         <template v-slot:location>
-          <a href="https://www.events.prace-ri.eu/event/850/">EuroHPC Summit Week 2019</a>
+          <HomeLink href="https://www.events.prace-ri.eu/event/850/">EuroHPC Summit Week 2019</HomeLink>
         </template>
         <template
           v-slot:description

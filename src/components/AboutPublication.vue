@@ -8,13 +8,17 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="w-full pb-4">
-    <div class="flex flex-row flex-wrap items-baseline">
-      <h1 class="text-xl mr-auto">{{ props.title }}</h1>
+  <div class="w-full pb-4 border-b border-b-secondary border-dashed">
+    <div class="flex flex-row flex-nowrap">
+      <h1 class="text-xl max-w-[80%] mr-auto">{{ props.title }}</h1>
       <h2 class="text-primary">{{ props.type }} - {{ props.year }}</h2>
     </div>
-    <h2>{{ props.authors }}</h2>
-    <slot name="location" />
-    <slot name="description" />
+    <div class="italic text-sm pb-4">{{ props.authors }}</div>
+    <div class="pb-2">
+      <slot name="location" />
+    </div>
+    <div>
+      <slot name="description" />
+    </div>
   </div>
 </template>
