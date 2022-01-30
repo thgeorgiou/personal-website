@@ -4,7 +4,6 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
       mono: ["Jetbrains Mono", "monospace"],
-      serif: ["Bitter", "serif"],
     },
     extend: {
       colors: {
