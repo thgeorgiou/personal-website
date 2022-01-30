@@ -6,15 +6,19 @@ import "../background.css";
 </script>
 
 <template>
-  <div class="h-auto sm:h-full flex flex-col justify-center">
+  <div class="h-auto md:h-full flex flex-col justify-center">
     <!-- Welcome text -->
-    <div class="flex flex-col sm:flex-row flex-nowrap justify-evenly topography-background p-20">
-      <img class="bg-secondary w-100 sm:w-[320px] sm:rounded-md" :src="MyPhoto" />
-      <div class="mx-auto sm:mx-4 mb-8 px-4 flex flex-col justify-center">
+    <div
+      class="flex flex-col lg:flex-row flex-nowrap justify-evenly topography-background p-8 sm:p-20"
+    >
+      <img class="bg-secondary w-[320px] h-[320px] rounded-lg md:rounded-md" :src="MyPhoto" />
+      <div
+        class="mx-auto pt-4 text-center md:text-left md:pt-0 md:mx-4 mb-8 md:px-4 flex flex-col justify-center"
+      >
         <h3 class="text-3xl text-white dark:text-primary">Hello! My name is</h3>
         <h1 class="pb-4 pt-2 text-6xl text-gray-lighter title-shadow">Thanasis Georgiou</h1>
         <ul
-          class="flex flex-col sm:flex-row list-inside list-disc space-y-1 sm:space-x-2 sm:space-y-0 text-2xl font-light text-primary"
+          class="flex flex-col text-left xl:flex-row list-inside list-disc space-y-1 xl:space-x-2 sm:space-y-0 text-2xl font-light text-primary"
         >
           <li>
             <span class="text-white">Data Scientist</span>
@@ -26,7 +30,7 @@ import "../background.css";
             <span class="text-white">Electronic Engineer</span>
           </li>
         </ul>
-        <div class="mt-6">
+        <div class="mt-6 flex flex-col md:flex-row flex-wrap">
           <HomeButton href="/about">about_me</HomeButton>
           <HomeButton href="https://github.com/thgeorgiou">github</HomeButton>
           <HomeButton href="https://www.linkedin.com/in/thanasis-georgiou-88a97420b/">linkedin</HomeButton>

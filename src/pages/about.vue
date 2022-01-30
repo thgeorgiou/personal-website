@@ -11,15 +11,15 @@ import AboutPublication from '../components/AboutPublication.vue';
 </script>
 
 <template>
-  <div class="max-w-7xl mx-auto">
+  <div class="w-10/12 max-w-7xl mx-auto">
     <div class="h-40 flex flex-row justify-center mb-8">
       <img :src="MyPhoto" class="rounded-full h-40 p-2 bg-white" />
       <div class="pl-8 flex flex-col justify-center">
         <h1 class="text-3xl">Thanasis Georgiou</h1>
-        <h1 class="text-2xl">About Me - CV</h1>
+        <h1 class="text-2xl">About Me</h1>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
       <HomeSection id="me" title="Me">
         <p>I am a self-diagnosed data hoarder, always on the lookout for data-driven challenges to solve. I started my career in web development during 2016 and since then I have tried to merge web and data science by creating insightful windows into the world of data.</p>
 

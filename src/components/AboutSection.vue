@@ -9,7 +9,7 @@ const props = defineProps({
     <h2
       class="block text-2xl mb-4 pb-1 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed"
     >{{ props.title }}</h2>
-    <div class="px-8 space-y-8">
+    <div class="sm:px-8 space-y-8">
       <slot />
     </div>
   </div>
