@@ -172,21 +172,6 @@ import AboutPublication from '../components/AboutPublication.vue';
       </AboutPublication>
 
       <AboutPublication
-        title="First demonstration of a CALIPSO-based fine-mode and coarse-mode pure-dust product"
-        year="2021"
-        authors="Proestakis Εmmanouil, Gkikas Αntonis, Alexiou Alexandros, Marinou Eleni, Georgiou Thanasis, Amiridis Vassilis"
-        type="Conference"
-      >
-        <template v-slot:location>
-          <HomeLink href="https://www.conferre.gr/allevents/comecap2020/">COMECAP 2021</HomeLink>
-        </template>
-
-        <template
-          v-slot:description
-        >My contribution: Development of Python codebase for processing of satellite datasets. Optimization of existing codebase for better utilization of Numpy functions, improving performance x100 and making the project feasible.</template>
-      </AboutPublication>
-
-      <AboutPublication
         title="Polarization lidar for detecting dust orientation: system design and calibration"
         year="2021"
         authors="Alexandra Tsekeri, Vassilis Amiridis, Alexandros Louridas, George Georgoussis, Volker Freudenthaler, Spiros Metallinos, George Doxastakis, Josef Gasteiger, Nikolaos Siomos, Peristera Paschou, Thanasis Georgiou, George Tsaknakis, Christos Evangelatos, Ioannis Binietoglou"
@@ -208,7 +193,9 @@ import AboutPublication from '../components/AboutPublication.vue';
         authors="Alexandra Tsekeri, Volker Freudenthaler, Vassilis Amiridis, George Doxastakis, Alexandros Louridas, George Georgoussis, Spiros Metallinos, Josef Gasteiger, Nikolaos Siomos, Peristera Paschou, Thanasis Georgiou, George Tsaknakis, Christos Evangelatos, Ioannis Binietoglou"
         type="Conference"
       >
-        <template v-slot:location>vEGU21</template>
+        <template v-slot:location>
+          <HomeLink href="https://www.egu21.eu/">vEGU21</HomeLink>
+        </template>
         <template
           v-slot:description
         >My contribution: Assistance in neural network development and orchestration of data processing on HPC systems.</template>

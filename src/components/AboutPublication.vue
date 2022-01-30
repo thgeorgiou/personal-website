@@ -17,7 +17,7 @@ const props = defineProps({
     <div class="pb-2">
       <slot name="location" />
     </div>
-    <div>
+    <div class="font-light tracking-tight">
       <slot name="description" />
     </div>
   </div>
