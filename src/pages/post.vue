@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-3xl bg-background-light mx-auto p-8 flex flex-col items-center">
+  <div class="max-w-3xl bg-gray-darker-light mx-auto p-8 flex flex-col items-center">
     <div class="text-black justify-center prose">
       <h1>HTML Ipsum Presents</h1>
 

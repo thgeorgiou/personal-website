@@ -4,14 +4,14 @@
 @tailwind utilities;
 
 .title-shadow {
-  text-shadow: 2px 2px #f78154, 4px 4px #706c61;
+  text-shadow: 2px 2px #f06449, 4px 4px #706c61;
 }
 
 .box-shadow {
-  box-shadow: 4px 4px #f78154;
+  box-shadow: 4px 4px #f06449;
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .box-shadow:hover {
-  box-shadow: 8px 8px #f78154;
+  box-shadow: 8px 8px #f06449;
 }

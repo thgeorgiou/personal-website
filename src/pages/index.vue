@@ -12,7 +12,7 @@ import "../background.css";
       <img class="bg-secondary w-100 sm:w-[320px] sm:rounded-md" :src="MyPhoto" />
       <div class="mx-auto sm:mx-4 mb-8 px-4 flex flex-col justify-center">
         <h3 class="text-2xl text-primary">Hello! My name is</h3>
-        <h1 class="pb-4 pt-2 text-6xl title-shadow">Thanasis Georgiou</h1>
+        <h1 class="pb-4 pt-2 text-6xl text-gray-lighter title-shadow">Thanasis Georgiou</h1>
         <ul
           class="flex flex-col sm:flex-row list-inside list-disc space-y-1 sm:space-x-2 sm:space-y-0 text-2xl font-light text-primary"
         >
@@ -27,8 +27,9 @@ import "../background.css";
           </li>
         </ul>
         <div class="mt-6">
-          <HomeButton href="/about">About Me</HomeButton>
-          <HomeButton href="https://github.com/thgeorgiou">Github</HomeButton>
+          <HomeButton href="/about">about_me</HomeButton>
+          <HomeButton href="https://github.com/thgeorgiou">github</HomeButton>
+          <HomeButton href="https://www.linkedin.com/in/thanasis-georgiou-88a97420b/">linkedin</HomeButton>
         </div>
       </div>
     </div>
