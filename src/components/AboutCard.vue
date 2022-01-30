@@ -15,7 +15,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="w-full pb-4 border-b border-b-secondary border-dashed last:border-0">
+  <div
+    class="w-full pb-4 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed last:border-0"
+  >
     <div class="flex flex-row flex-wrap items-baseline">
       <h1 class="text-xl mr-auto">
         {{ props.title }}

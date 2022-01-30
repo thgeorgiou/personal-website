@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="w-full pb-4 border-b border-b-secondary border-dashed">
+  <div class="w-full pb-4 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed">
     <div class="flex flex-row flex-nowrap">
       <h1 class="text-xl max-w-[80%] mr-auto">{{ props.title }}</h1>
       <h2 class="text-primary">{{ props.type }} - {{ props.year }}</h2>

@@ -5,7 +5,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid grid-cols-6 gap-4 border-b border-b-secondary border-dashed py-8 last:border-0">
+  <div
+    class="grid grid-cols-6 gap-4 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed py-8 last:border-0"
+  >
     <h2 class="block text-2xl">{{ props.title }}</h2>
     <div class="col-span-5 space-y-8">
       <slot />
