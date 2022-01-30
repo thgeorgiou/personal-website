@@ -5,11 +5,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-6 gap-4 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed py-8 last:border-0"
-  >
-    <h2 class="block text-2xl">{{ props.title }}</h2>
-    <div class="col-span-5 space-y-8">
+  <div class="py-2 last:border-0">
+    <h2
+      class="block text-2xl mb-4 pb-1 border-b border-b-gray-dark dark:border-b-gray-lighter border-dashed"
+    >{{ props.title }}</h2>
+    <div class="px-8 space-y-8">
       <slot />
     </div>
   </div>

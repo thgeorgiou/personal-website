@@ -107,22 +107,24 @@ import AboutPublication from '../components/AboutPublication.vue';
     </AboutSection>
 
     <AboutSection title="Skills">
-      <AboutCard title="Programming">
-        <AboutList class="text-lg mt-2">
-          <AboutListItem>Javascript, Typescript, Node.JS</AboutListItem>
-          <AboutListItem>Vue, React</AboutListItem>
-          <AboutListItem>Python</AboutListItem>
-          <AboutListItem>C# (.net core)</AboutListItem>
-        </AboutList>
-      </AboutCard>
-      <AboutCard title="DevOps, System Administration">
-        <AboutList class="text-lg mt-2">
-          <AboutListItem>Linux</AboutListItem>
-          <AboutListItem>Docker, Podman, Nomad, SaltStack</AboutListItem>
-          <AboutListItem>Airflow, Dagster</AboutListItem>
-          <AboutListItem>Gitlab CI</AboutListItem>
-        </AboutList>
-      </AboutCard>
+      <div class="flex flex-row space-x-8">
+        <AboutCard title="Programming">
+          <AboutList class="text-lg mt-2">
+            <AboutListItem>Javascript, Typescript, Node.JS</AboutListItem>
+            <AboutListItem>Vue, React</AboutListItem>
+            <AboutListItem>Python</AboutListItem>
+            <AboutListItem>C# (.net core)</AboutListItem>
+          </AboutList>
+        </AboutCard>
+        <AboutCard title="DevOps, System Administration">
+          <AboutList class="text-lg mt-2">
+            <AboutListItem>Linux</AboutListItem>
+            <AboutListItem>Docker, Podman, Nomad, SaltStack</AboutListItem>
+            <AboutListItem>Airflow, Dagster</AboutListItem>
+            <AboutListItem>Gitlab CI</AboutListItem>
+          </AboutList>
+        </AboutCard>
+      </div>
     </AboutSection>
 
     <AboutSection title="Academic Publications">
