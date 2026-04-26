@@ -1,6 +1,5 @@
 ---
 import { Font } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
@@ -63,7 +62,7 @@ const structuredData = {
 
     <!-- Load Font -->
     <Font
-      cssVariable="--font-google-sans-code"
+      cssVariable="--font-ibm-plex-mono"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
 
@@ -134,8 +133,6 @@ const structuredData = {
         />
       )
     }
-
-    <ClientRouter />
 
     <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
     <script is:inline>
