@@ -4,7 +4,7 @@ export const SITE = {
   profile: null,
   desc: "A website about numerical weather, photography, and other stuff I do",
   title: "thgeorgiou",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "", // empty: use the generated /og.png
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,

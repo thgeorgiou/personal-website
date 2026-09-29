@@ -1,102 +1,29 @@
 ---
 /**
- * A synthetic surface-pressure chart: Gaussian highs and lows on top of a
- * mid-latitude background (pressure rising southwards), contoured every 4 hPa
- * like a synoptic chart. Computed at build time, so the page ships a static SVG.
+ * The pressure chart behind the home page hero (see utils/isobars). Computed at
+ * build time, so the page ships a static SVG.
  */
-import { contours } from "d3-contour";
+import { isobars, markers, viewBox } from "@/utils/isobars";
 
 type Props = { class?: string };
 const { class: className } = Astro.props;
-
-// Grid resolution; the SVG viewBox uses the same units.
-const W = 240;
-const H = 135;
-
-type PressureSystem = {
-  kind: "H" | "L";
-  x: number; // centre, as a fraction of the width
-  y: number; // centre, as a fraction of the height
-  dp: number; // pressure anomaly at the centre, hPa
-  sx: number; // spread along x, as a fraction of the width
-  sy: number; // spread along y, as a fraction of the height
-};
-
-// The text sits on the left of the hero, so the interesting weather is in the east.
-const SYSTEMS: PressureSystem[] = [
-  { kind: "L", x: 0.8, y: 0.3, dp: -26, sx: 0.08, sy: 0.17 },
-  { kind: "L", x: 0.93, y: 0.76, dp: -12, sx: 0.06, sy: 0.12 },
-  { kind: "H", x: 0.64, y: 0.74, dp: 14, sx: 0.1, sy: 0.22 },
-  { kind: "H", x: 0.98, y: 0.12, dp: 8, sx: 0.07, sy: 0.12 },
-  { kind: "L", x: 0.36, y: 0.22, dp: -14, sx: 0.08, sy: 0.16 },
-  { kind: "H", x: 0.12, y: 0.75, dp: 12, sx: 0.12, sy: 0.25 },
-];
-
-const pressure = (x: number, y: number) =>
-  1012 +
-  8 * (y - 0.5) + // lower pressure to the north
-  1.5 * Math.sin(x * 11 + y * 4) + // a gentle wave so no contour is a perfect ellipse
-  SYSTEMS.reduce(
-    (p, s) =>
-      p +
-      s.dp *
-        Math.exp(
-          -((x - s.x) ** 2 / (2 * s.sx ** 2) + (y - s.y) ** 2 / (2 * s.sy ** 2))
-        ),
-    0
-  );
-
-const values = new Float64Array(W * H);
-for (let j = 0; j < H; j++) {
-  for (let i = 0; i < W; i++) {
-    values[j * W + i] = pressure(i / (W - 1), j / (H - 1));
-  }
-}
-
-const thresholds: number[] = [];
-for (let p = 960; p <= 1040; p += 4) thresholds.push(p);
-
-const round = (n: number) => Math.round(n * 100) / 100;
-const isobars = contours()
-  .size([W, H])
-  .thresholds(thresholds)(Array.from(values))
-  .filter(c => c.coordinates.length > 0)
-  .map(c => ({
-    value: c.value,
-    d: c.coordinates
-      .flat()
-      .map(
-        ring =>
-          "M" + ring.map(([x, y]) => `${round(x)},${round(y)}`).join("L") + "Z"
-      )
-      .join(""),
-  }));
-
-// Label each system with its central pressure, as on a real chart
-const markers = SYSTEMS.filter(
-  s => s.x > 0.03 && s.x < 0.97 && s.y > 0.05 && s.y < 0.95
-).map(s => ({ ...s, centre: Math.round(pressure(s.x, s.y)) }));
 ---
 
 <svg
   class:list={["isobars", className]}
-  viewBox={`1 1 ${W - 2} ${H - 2}`}
+  viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
   preserveAspectRatio="xMidYMid slice"
   aria-hidden="true"
   focusable="false"
 >
-  {
-    isobars.map(({ value, d }) => (
-      <path d={d} class:list={{ major: value % 20 === 0 }} />
-    ))
-  }
+  {isobars.map(({ major, d }) => <path d={d} class:list={{ major }} />)}
   {
     markers.map(s => (
       <g class:list={[s.kind === "L" ? "low" : "high"]}>
-        <text x={s.x * W} y={s.y * H} class="letter">
+        <text x={s.x} y={s.y} class="letter">
           {s.kind}
         </text>
-        <text x={s.x * W} y={s.y * H + 6.5} class="centre">
+        <text x={s.x} y={s.y + 6.5} class="centre">
           {s.centre}
         </text>
       </g>
@@ -105,7 +32,6 @@ const markers = SYSTEMS.filter(
 </svg>
 
 <style>
-  /* The viewBox is inset by one unit so the edge segments d3 adds to close rings stay hidden. */
   .isobars {
     display: block;
     width: 100%;
