@@ -1,110 +1,210 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
+import Isobars from "@/components/Isobars.astro";
+import { PROFILES } from "@/constants";
+import { monthYear, newestFirst } from "@/utils/cv";
 
-const posts = await getCollection("blog");
+// Drop a portrait at src/assets/images/portrait.{jpg,png,webp} and it shows up in the hero.
+const portraits = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/portrait.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
+const portrait = Object.values(portraits)[0]?.default;
 
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const byStartDesc = newestFirst<{ data: { startDate: Date } }>(
+  e => e.data.startDate
+);
+
+const work = await getCollection("work");
+const education = await getCollection("education");
+const news = (await getCollection("news")).sort(newestFirst(e => e.data.date));
+
+// Anything in the CV without an end date is ongoing
+const current = [
+  ...work
+    .filter(({ data }) => !data.endDate)
+    .sort(byStartDesc)
+    .map(({ data }) => ({
+      title: data.role,
+      place: data.name,
+      since: data.startDate,
+    })),
+  ...education
+    .filter(({ data }) => !data.endDate)
+    .sort(byStartDesc)
+    .map(({ data }) => ({
+      title: data.degree,
+      place: data.institution,
+      since: data.startDate,
+    })),
+];
+
+const year = (date: Date) => date.getFullYear();
 ---
 
 <Layout>
   <Header />
-  <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl">
-        Thanasis Georgiou
-      </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
+  <main id="main-content" class="app-layout pb-16">
+    <section
+      id="hero"
+      class="relative isolate overflow-hidden border border-edge bg-surface"
+    >
+      <Isobars class="chart absolute inset-0 -z-10" />
+
+      <div
+        class="grid gap-8 px-6 py-10 sm:px-10 sm:py-14 md:grid-cols-[auto_1fr] md:items-end md:gap-10"
       >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
+        {
+          portrait ? (
+            <Image
+              src={portrait}
+              alt="Thanasis Georgiou"
+              width={176}
+              height={176}
+              class="size-32 border border-edge object-cover sm:size-44"
+              loading="eager"
+            />
+          ) : (
+            import.meta.env.DEV && (
+              <div class="grid size-32 place-content-center border border-dashed border-edge p-3 text-center text-xs break-all text-subtle sm:size-44">
+                src/assets/images/portrait.jpg
+              </div>
+            )
+          )
+        }
 
-      <p>
-        Hello, I am a PhD candidate working on Numerical Weather Prediction in Athens! This is a website about the stuff I do, academia, NWP, photography...
-      </p>
-
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+        <div class="max-w-xl">
+          <h1
+            class="text-[clamp(2.5rem,8vw,4.5rem)] leading-[0.95] font-medium tracking-[-0.04em]"
+          >
+            Thanasis<br />Georgiou
+          </h1>
+          <p class="mt-5 text-lg leading-snug text-balance sm:text-xl">
+            Researcher in data assimilation and atmospheric composition at the
+            National Observatory of Athens.
+          </p>
+          <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-display text-sm">
+            {
+              PROFILES.map(({ name, href }) => (
+                <li>
+                  <a
+                    href={href}
+                    class="underline decoration-accent/60 decoration-1 underline-offset-4 hover:text-accent-ink hover:decoration-2"
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-b border-border": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <div class="mt-14 grid gap-12 md:grid-cols-[minmax(0,1fr)_17rem] md:gap-14">
+      <section id="about" class="max-w-[62ch]">
+        <h2 class="text-xl font-medium tracking-tight">About</h2>
+        <div class="mt-4 space-y-4 text-[1.0625rem] leading-relaxed">
+          <p>
+            Hi! I'm Thanasis, an atmospheric scientist based in Athens. I work
+            on atmospheric composition and numerical weather prediction, and
+            more specifically on data assimilation: combining observations from
+            new satellite instruments (EarthCARE, PACE, Aeolus) with models to
+            get the best possible picture of aerosols in the atmosphere.
+          </p>
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
+          <p>
+            I'm a PhD candidate working at the National Observatory of Athens.
+            Before that, I spent five years as a software engineer in the same
+            group, where I ran our HPC cluster, built a global aerosol
+            climatology and developed a platform to manage observations for the
+            PANGEA climate observatory on Antikythera. Somewhere along the line
+            I got to know the atmosphere well enough to want to study it
+            properly, so I switched to research. Old habits die hard, so I still
+            look after the cluster. These days I also help supervise some of our
+            newer PhD students.
+          </p>
 
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
+          <p>
+            Outside of work, I shoot film, collect and fix old cameras, and
+            tinker with 3D printing and electronics, which occasionally meet in
+            the middle. I also love hiking and on occasion dabble in
+            observational astronomy.
+          </p>
+
+          <p>
+            <a
+              href="/cv"
+              class="font-medium text-accent-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+            >
+              Read the full CV
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <aside class="space-y-10">
+        {
+          current.length > 0 && (
+            <section id="currently">
+              <h2 class="text-xl font-medium tracking-tight">Currently</h2>
+              <ul class="mt-4 space-y-3">
+                {current.map(({ title, place, since }) => (
+                  <li class="border border-edge bg-surface px-4 py-3">
+                    <p class="leading-snug font-medium">{title}</p>
+                    <p class="mt-0.5 text-sm leading-snug text-subtle">
+                      {place}, since {year(since)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          news.length > 0 && (
+            <section id="news">
+              <h2 class="text-xl font-medium tracking-tight">News</h2>
+              <ol class="mt-4 space-y-3">
+                {news.slice(0, 5).map(({ data }) => (
+                  <li class="border-l-2 border-accent pl-3">
+                    <time
+                      datetime={data.date.toISOString()}
+                      class="block text-sm text-subtle"
+                    >
+                      {monthYear(data.date)}
+                    </time>
+                    <p class="leading-snug">{data.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )
+        }
+      </aside>
     </div>
   </main>
   <Footer />
 </Layout>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset?.layout;
-    if (indexLayout) {
-      sessionStorage.setItem("backUrl", "/");
+<style>
+  /* Keep the chart out from behind the text: it fades in towards the east. */
+  #hero :global(.chart) {
+    mask-image: linear-gradient(to right, transparent 35%, black 80%);
+  }
+
+  /* On narrow screens show only the eastern half of the chart, where the deep low is. */
+  @media (max-width: 767px) {
+    #hero :global(.chart) {
+      left: auto;
+      width: 200%;
+      mask-image: linear-gradient(to bottom, black, transparent 55%);
+      opacity: 0.8;
     }
-  });
-</script>
+  }
+</style>

@@ -3,30 +3,53 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/*
+ * Layers, back to front: background (the ground) -> surface -> raised.
+ * All three share a cool slate tint so the orange accent reads as the only warm colour.
+ */
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  --background: #e8ecef;
+  --surface: #f3f5f7;
+  --raised: #fbfcfd;
+  --foreground: #1a2229;
+  --subtle: #56626c;
+  --accent: #e8590c;
+  --accent-ink: #b5470a; /* accent dark enough for body-size text */
+  --muted: #dce1e5;
+  --border: #cbd3d9;
+  --edge: #b3bec7; /* outline of layered panels */
+  --isobar: #9aa8b3;
 }
 
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+  --background: #151a20;
+  --surface: #1d242c;
+  --raised: #252d36;
+  --foreground: #e4e9ed;
+  --subtle: #97a3ae;
+  --accent: #ff7a2f;
+  --accent-ink: #ff9a5e;
+  --muted: #2b343e;
+  --border: #33404b;
+  --edge: #4a5664;
+  --isobar: #4b5a67;
 }
 
 @theme inline {
-  --font-app: var(--font-ibm-plex-mono);
+  --font-app: var(--font-ibm-plex-sans);
+  --font-display: var(--font-ibm-plex-mono);
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
   --color-foreground: var(--foreground);
+  --color-subtle: var(--subtle);
   --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-edge: var(--edge);
+  --color-isobar: var(--isobar);
 }
 
 @layer base {
@@ -41,6 +64,12 @@ html[data-theme="dark"] {
   body {
     @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
   a,
   button {
     @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
@@ -52,7 +81,7 @@ html[data-theme="dark"] {
 }
 
 @utility max-w-app {
-  @apply max-w-3xl;
+  @apply max-w-4xl;
 }
 
 @utility app-layout {
@@ -60,7 +89,7 @@ html[data-theme="dark"] {
 }
 
 .active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
+  @apply underline decoration-accent decoration-2 underline-offset-8;
 }
 
 /* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
