@@ -3,10 +3,13 @@ type Props = { id: string; title: string; note?: string };
 const { id, title, note } = Astro.props;
 ---
 
-<section id={id} class="mt-14">
+<section id={id} class="group/section mt-14">
   <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
     <h2 class="text-xl font-medium tracking-tight">{title}</h2>
-    {note && <p class="text-sm text-subtle">{note}</p>}
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+      {note && <p class="text-sm text-subtle">{note}</p>}
+      <slot name="actions" />
+    </div>
   </div>
   <ol class="mt-4 space-y-7 border border-edge bg-surface px-5 py-7 sm:px-8">
     <slot />
