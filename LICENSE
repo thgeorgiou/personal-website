@@ -1,6 +1,19 @@
+This site is built on AstroPaper (https://github.com/satnaing/astro-paper), a
+theme by Sat Naing. The original template is Sat Naing's work; the changes and
+additions made on top of it are Thanasis Georgiou's. The code, both the
+template and those changes, is released under the MIT License below.
+
+The content of the site is not covered by the MIT License. That is the written
+text on its pages, the CV data (src/data/cv.toml) and the PDF generated from it,
+blog posts (src/data/blog/) and images (src/assets/images/). It is
+Copyright (c) 2026 Thanasis Georgiou, all rights reserved.
+
+--------------------------------------------------------------------------------
+
 MIT License
 
 Copyright (c) 2023 Sat Naing
+Copyright (c) 2026 Thanasis Georgiou
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
