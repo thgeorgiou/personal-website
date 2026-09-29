@@ -8,6 +8,7 @@ import Entry from "@/components/cv/Entry.astro";
 import Authors from "@/components/cv/Authors.astro";
 import FirstAuthorFilter from "@/components/cv/FirstAuthorFilter.astro";
 import ProfileLinks from "@/components/ProfileLinks.astro";
+import IconFileDownload from "@/assets/icons/IconFileDownload.svg";
 import { SITE } from "@/config";
 import { dateRange, monthYear, newestFirst } from "@/utils/cv";
 
@@ -63,19 +64,34 @@ const hasFirstAuthor = (entries: { data: { isFirstAuthor: boolean } }[]) =>
         Curriculum vitae
       </h1>
       <ProfileLinks class="mt-5" aria-label="Profiles" />
-      <nav aria-label="Sections" class="mt-6 border-t border-edge pt-4">
-        <ul class="flex flex-wrap gap-x-5 gap-y-2 font-display text-sm">
-          {
-            sections.map(({ id, title }) => (
-              <li>
-                <a href={`#${id}`} class={linkClass}>
-                  {title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+      <div
+        class="mt-6 flex flex-wrap items-baseline justify-between gap-x-5 gap-y-3 border-t border-edge pt-4"
+      >
+        <nav aria-label="Sections">
+          <ul class="flex flex-wrap gap-x-5 gap-y-2 font-display text-sm">
+            {
+              sections.map(({ id, title }) => (
+                <li>
+                  <a href={`#${id}`} class={linkClass}>
+                    {title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <a
+          href="/cv.pdf"
+          download={`${SITE.author.replaceAll(" ", "-")}-CV.pdf`}
+          class="group inline-flex items-center gap-1.5 font-display text-sm text-accent-ink"
+        >
+          <IconFileDownload class="size-4 shrink-0" aria-hidden="true" />
+          <span
+            class="underline decoration-accent/60 decoration-1 underline-offset-4 group-hover:decoration-2"
+            >Download PDF</span
+          >
+        </a>
+      </div>
     </header>
 
     {

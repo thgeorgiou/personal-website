@@ -4,9 +4,10 @@
   "version": "5.5.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "pnpm run cv && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
     "preview": "astro preview",
     "sync": "astro sync",
+    "cv": "typst compile --root . src/cv/cv.typ public/cv.pdf",
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
