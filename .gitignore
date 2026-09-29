@@ -29,3 +29,6 @@ public/pagefind
 
 # generated CV
 public/cv.pdf
+
+# Typst and fonts fetched for Vercel builds
+.typst/

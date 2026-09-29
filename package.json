@@ -2,9 +2,11 @@
   "name": "personal-website",
   "type": "module",
   "version": "5.5.1",
+  "packageManager": "pnpm@10.11.1",
   "scripts": {
     "dev": "astro dev",
     "build": "pnpm run cv && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "vercel-build": "sh scripts/vercel-typst.sh && PATH=\"$PWD/.typst:$PATH\" TYPST_FONT_PATHS=.typst/fonts pnpm run build",
     "preview": "astro preview",
     "sync": "astro sync",
     "cv": "typst compile --root . src/cv/cv.typ public/cv.pdf",
