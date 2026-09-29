@@ -68,6 +68,14 @@ export default defineConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ["normal", "italic"],
       },
+      {
+        name: "IBM Plex Sans",
+        cssVariable: "--font-ibm-plex-sans",
+        provider: fontProviders.google(),
+        fallbacks: ["sans-serif"],
+        weights: [400, 500, 600],
+        styles: ["normal", "italic"],
+      },
     ],
   },
 });
