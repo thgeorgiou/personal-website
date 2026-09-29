@@ -16,7 +16,17 @@ export default defineConfig({
   site: SITE.website,
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      // The sitemap lists routes, even ones that skipped writing a page, so
+      // leave out the blog while it's hidden
+      filter: page => {
+        const { pathname } = new URL(page);
+        if (/^\/(posts|tags|archives|search)(\/|$)/.test(pathname)) {
+          return (
+            SITE.showBlog && (SITE.showArchives || pathname !== "/archives/")
+          );
+        }
+        return true;
+      },
     }),
   ],
   markdown: {

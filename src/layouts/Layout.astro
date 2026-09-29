@@ -2,6 +2,7 @@
 import { Font } from "astro:assets";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
+import { PROFILES } from "@/constants";
 import "@/styles/global.css";
 
 type Props = {
@@ -30,21 +31,31 @@ const {
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: `${title}`,
-  image: `${socialImageURL}`,
-  datePublished: `${pubDatetime?.toISOString()}`,
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
-    {
-      "@type": "Person",
-      name: `${author}`,
-      ...(profile && { url: profile }),
-    },
-  ],
+const person = {
+  "@type": "Person",
+  name: author,
+  url: profile ?? SITE.website,
+  sameAs: PROFILES.filter(({ href }) => href.startsWith("http")).map(
+    ({ href }) => href
+  ),
 };
+
+// Blog posts are articles; every other page is about me
+const structuredData = pubDatetime
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: title,
+      image: `${socialImageURL}`,
+      datePublished: pubDatetime.toISOString(),
+      ...(modDatetime && { dateModified: modDatetime.toISOString() }),
+      author: [person],
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      mainEntity: person,
+    };
 ---
 
 <!doctype html>
@@ -117,12 +128,16 @@ const structuredData = {
 
     <!-- Enable RSS feed auto-discovery  -->
     <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={SITE.title}
-      href={new URL("rss.xml", Astro.site)}
-    />
+    {
+      SITE.showBlog && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={SITE.title}
+          href={new URL("rss.xml", Astro.site)}
+        />
+      )
+    }
 
     <meta name="theme-color" content="" />
 

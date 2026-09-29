@@ -12,6 +12,7 @@ import getPostsByTag from "@/utils/getPostsByTag";
 import { SITE } from "@/config";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  if (!SITE.showBlog) return [];
   const posts = await getCollection("blog");
   const tags = getUniqueTags(posts);
 
@@ -26,18 +27,15 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   });
 }
 
-const params = Astro.params;
-const { tag } = params;
 const { page, tagName } = Astro.props;
 ---
 
 <Layout title={`Tag: ${tagName} | ${SITE.title}`}>
   <Header />
   <Main
-    pageTitle={[`Tag:`, `${tagName}`]}
+    pageTitle={`Tag: ${tagName}`}
     pageDesc={`All the articles with the tag "${tagName}".`}
   >
-    <h1 slot="title">{`Tag:${tag}`}</h1>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

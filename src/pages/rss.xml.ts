@@ -5,6 +5,8 @@ import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 
 export async function GET() {
+  if (!SITE.showBlog) return new Response(null, { status: 404 });
+
   const posts = await getCollection("blog");
   const sortedPosts = getSortedPosts(posts);
   return rss({

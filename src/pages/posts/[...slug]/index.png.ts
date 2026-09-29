@@ -5,7 +5,7 @@ import { generateOgImageForPost } from "@/utils/generateOgImages";
 import { SITE } from "@/config";
 
 export async function getStaticPaths() {
-  if (!SITE.dynamicOgImage) {
+  if (!SITE.showBlog || !SITE.dynamicOgImage) {
     return [];
   }
 

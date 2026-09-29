@@ -44,6 +44,12 @@ async function loadGoogleFonts(
     {
       name: "IBM Plex Mono",
       font: "IBM+Plex+Mono",
+      weight: 500,
+      style: "normal",
+    },
+    {
+      name: "IBM Plex Mono",
+      font: "IBM+Plex+Mono",
       weight: 700,
       style: "bold",
     },

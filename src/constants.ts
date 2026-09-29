@@ -1,7 +1,7 @@
 import type { Props } from "astro";
 import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
-import IconBrandX from "@/assets/icons/IconBrandX.svg";
+import IconInstagram from "@/assets/icons/IconInstagram.svg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -22,7 +22,7 @@ export const SOCIALS: Social[] = [
     name: "Instagram",
     href: "https://www.instagram.com/thanasis.georgiou",
     linkTitle: `${SITE.title} on Instagram`,
-    icon: IconBrandX,
+    icon: IconInstagram,
   },
   {
     name: "Mail",
@@ -36,7 +36,10 @@ export const SOCIALS: Social[] = [
 // hidden, so fill them in when you have them.
 export const PROFILES = [
   { name: "ORCID", href: "https://orcid.org/0000-0002-2940-5672" },
-  { name: "Google Scholar", href: "https://scholar.google.com/citations?user=CxFkOjsAAAAJ" },
+  {
+    name: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=CxFkOjsAAAAJ",
+  },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/thgeorgiou/" },
   { name: "GitHub", href: "https://github.com/thgeorgiou" },
   { name: "Email", href: "mailto:web@thgeorgiou.com" },
