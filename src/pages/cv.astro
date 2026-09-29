@@ -146,7 +146,8 @@ const plural =(n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
               <h3 class="font-app leading-snug font-medium">{data.title}</h3>
               <Authors authors={data.authors} />
               <p class="mt-1 text-sm leading-snug">
-                {data.type === "poster" ? "Poster" : "Presentation"} at{" "}
+                {data.type &&
+                  `${data.type === "poster" ? "Poster" : "Presentation"} at `}
                 {data.url ? (
                   <>
                     <a href={data.url} class={linkClass}><cite>{data.name}</cite></a>, {data.location}

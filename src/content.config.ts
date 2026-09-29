@@ -80,7 +80,7 @@ const conferences = defineCollection({
     title: z.string(),
     authors: z.string(),
     isFirstAuthor: z.boolean().default(false),
-    type: z.enum(["presentation", "poster"]),
+    type: z.enum(["presentation", "poster"]).optional(),
     hasProceedings: z.boolean().default(false),
     url: z.string().url().optional(),
   }),

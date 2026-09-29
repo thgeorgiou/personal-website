@@ -49,6 +49,14 @@ endDate = 2020-09-01
 # - journal
 # - doi
 [[publication]]
+title = "Atmospheric Dust as an Air Quality Hazard to the World Population"
+authors = "Emmanouil Proestakis; Sofia Eirini Chatoutsidou; Ioannis Binietoglou; Thanos Kourantos; Thanasis Georgiou; Mihalis Lazaridis; Vassilis Amiridis"
+isFirstAuthor = false
+publicationDate = 2026-07-20
+journal = "Remote Sensing"
+doi = "10.3390/rs18142403"
+
+[[publication]]
 title = "Derivation and validation of a refined dust product from Aeolus (L2A+)"
 authors = "Konstantinos Rizos; Emmanouil Proestakis; Thanasis Georgiou; Antonis Gkikas; Eleni Marinou; Peristera Paschou; Kalliopi Artemis Voudouri; Athanasios Tsikerdekis; David P. Donovan; Gerd-Jan van Zadelhoff et al."
 isFirstAuthor = false
@@ -136,7 +144,7 @@ doi = "10.5194/amt-14-7453-2021"
 # - title
 # - authors (separated by ';', may end in 'et al.')
 # - isFirstAuthor
-# - type (presentation, poster)
+# - type (presentation, poster; optional)
 # - hasProceedings
 # - url
 [[conferences]]
@@ -160,6 +168,22 @@ type = "presentation"
 url = "https://www.earthcare-science-validation-2026.org/"
 
 [[conferences]]
+name = "EGU 2026"
+date = 2026-05-03
+location = "Vienna, Austria"
+title = "Investigating dust mixing state, using the backscatter of realistic dust shapes"
+authors = "Alexandra Tsekeri; Anna Gialitaki; Josef Gasteiger; Natalia Kustova; Alexander Konoshonkin; Maxim Yurkin; Thanasis Georgiou; Johanne Ekue; Anna Kampouri; Maria Tsichla et al."
+url = "https://doi.org/10.5194/egusphere-egu26-21745"
+
+[[conferences]]
+name = "EGU 2026"
+date = 2026-05-03
+location = "Vienna, Austria"
+title = "Advanced retrieval of aerosol vertical profiles using synergy of EarthCARE ATLID and various passive spaceborne observations"
+authors = "Anton Lopatin; Anna Gialitaki; Chong Li; Dimitra Karkani; Alexandra Tsekeri; Alejandro García-Gómez; Thanasis Georgiou; Oleg Dubovik; Edward Malina"
+url = "https://doi.org/10.5194/egusphere-egu26-5660"
+
+[[conferences]]
 name = "AEOLUS Conference 2026"
 date = 2026-04-13
 location = "Lipari, Italy"
@@ -180,6 +204,36 @@ type = "poster"
 url = "https://www.eorc.jaxa.jp/EARTHCARE/event/ws2025/index.html"
 
 [[conferences]]
+name = "COMECAP 2025"
+date = 2025-09-29
+location = "Nicosia, Cyprus"
+title = "Assimilation of Satellite Dust Optical Depth in the CiROCCO System: Methodology and Initial Results"
+authors = "Eleni Drakaki; Thanasis Georgiou; Vassilis Amiridis"
+type = "presentation"
+hasProceedings = true
+url = "https://doi.org/10.3390/eesp2025035018"
+
+[[conferences]]
+name = "COMECAP 2025"
+date = 2025-09-29
+location = "Nicosia, Cyprus"
+title = "AtmoHub: A National Atmospheric Composition Hub for Air Quality Monitoring and Forecasting in Greece"
+authors = "Anna Kampouri; Stergios Kartsios; Thanos Kourantos; Maria Tsichla; Kalliopi Artemis Voudouri; Anna Gialitaki; Thanasis Georgiou; Eleni Drakaki; Marios Mermigkas; Vassilis Spyrakos et al."
+type = "presentation"
+hasProceedings = true
+url = "https://doi.org/10.3390/eesp2025035036"
+
+[[conferences]]
+name = "COMECAP 2025"
+date = 2025-09-29
+location = "Nicosia, Cyprus"
+title = "Cloud Condensation Nuclei (CCN) and Ice Nucleating Particles (INP) Conversion Factors Based on Thessaloniki and Leipzig AERONET Stations Using CALIPSO Aerosol Typing"
+authors = "Archontoula Karageorgopoulou; Vassilis Amiridis; Thanasis Georgiou; Eleni Marinou; Eleni Giannakaki"
+type = "poster"
+hasProceedings = true
+url = "https://doi.org/10.3390/eesp2025035033"
+
+[[conferences]]
 name = "ESA Living Planet Symposium"
 date = 2025-06-23
 location = "Vienna, Austria"
@@ -190,6 +244,38 @@ type = "poster"
 url = "https://lps25.esa.int/"
 
 [[conferences]]
+name = "EGU 2025"
+date = 2025-04-27
+location = "Vienna, Austria"
+title = "Assessment of Atmospheric Pollen Presence in Urban Areas of Greece During CALIPSO Overpasses"
+authors = "Archontoula Karageorgopoulou; Christos Stathopoulos; Thanasis Georgiou; Xiaoxia Shang; Ioanna Pyrri; Vassilis Amiridis; Elina Giannakaki"
+url = "https://doi.org/10.5194/egusphere-egu25-21759"
+
+[[conferences]]
+name = "EGU 2025"
+date = 2025-04-27
+location = "Vienna, Austria"
+title = "Earth Observations and Atmospheric Dust: unveiling Atlantic Ocean deposition"
+authors = "Jan-Berend Stuut; Emmanouil Proestakis; Vassilis Amiridis; Carlos Pérez García-Pando; Svetlana Tsyro; Jan Griesfeller; Antonis Gkikas; Thanasis Georgiou; María Gonçalves Ageitos; Jeronimo Escribano et al."
+url = "https://doi.org/10.5194/egusphere-egu25-11653"
+
+[[conferences]]
+name = "EGU 2025"
+date = 2025-04-27
+location = "Vienna, Austria"
+title = "Volcanic Emission Estimation and Dispersion Modeling Using Inversion of ACTRIS Lidar Observations"
+authors = "Anna Kampouri; Vassilis Amiridis; Thanasis Georgiou; Stavros Solomos; Anna Gialitaki; Maria Tsichla; Antonis Gkikas; Emmanouil Proestakis; Michael Rennie; Simona Scollo et al."
+url = "https://doi.org/10.5194/egusphere-egu25-9763"
+
+[[conferences]]
+name = "EGU 2025"
+date = 2025-04-27
+location = "Vienna, Austria"
+title = "Enhancing WRF-Chem Dust Predictions Through Assimilation of Satellite-Based MIDAS Dust Optical Depth Data"
+authors = "Eleni Drakaki; Antonis Gkikas; Thanasis Georgiou; Hesham El-Askary; Vassilis Amiridis"
+url = "https://doi.org/10.5194/egusphere-egu25-18448"
+
+[[conferences]]
 name = "ISDA 2024"
 date = 2024-10-21
 location = "Kobe, Japan"
@@ -198,6 +284,14 @@ authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmano
 isFirstAuthor = true
 type = "poster"
 url = "https://www.data-assimilation.riken.jp/isda2024/"
+
+[[conferences]]
+name = "EMS Annual Meeting 2024"
+date = 2024-09-01
+location = "Barcelona, Spain"
+title = "A near-global multiyear climate data record of the submicrometer-mode and supermicrometer-mode components of atmospheric pure-dust"
+authors = "Emmanouil Proestakis; Antonis Gkikas; Thanasis Georgiou; Anna Kampouri; Eleni Drakaki; Claire L. Ryder; Franco Marenco; Eleni Marinou; Vassilis Amiridis"
+url = "https://doi.org/10.5194/ems2024-709"
 
 [[conferences]]
 name = "IGARSS 2024"
@@ -232,6 +326,14 @@ hasProceedings = false
 url = "https://www.egu24.eu/"
 
 [[conferences]]
+name = "EGU 2024"
+date = 2024-04-14
+location = "Vienna, Austria"
+title = "A near-global multiyear climate data record of the fine-mode and coarse-mode components of atmospheric pure-dust"
+authors = "Emmanouil Proestakis; Antonis Gkikas; Thanasis Georgiou; Anna Kampouri; Eleni Drakaki; Claire L. Ryder; Franco Marenco; Eleni Marinou; Vassilis Amiridis"
+url = "https://doi.org/10.5194/egusphere-egu24-5430"
+
+[[conferences]]
 name = "COMECAP 2023"
 date = 2023-09-25
 location = "Athens, Greece"
@@ -241,6 +343,46 @@ isFirstAuthor = true
 type = "presentation"
 hasProceedings = true
 url = "https://www.mdpi.com/2673-4931/26/1/193"
+
+[[conferences]]
+name = "COMECAP 2023"
+date = 2023-09-25
+location = "Athens, Greece"
+title = "An Overview of the ASKOS Campaign in Cabo Verde"
+authors = "Eleni Marinou; Peristera Paschou; Ioanna Tsikoudi; Alexandra Tsekeri; Vasiliki Daskalopoulou; Dimitra Kouklaki; Nikolaos Siomos; Vasileios Spanakis-Misirlis; Kalliopi Artemis Voudouri; Thanasis Georgiou et al."
+type = "presentation"
+hasProceedings = true
+url = "https://doi.org/10.3390/environsciproc2023026200"
+
+[[conferences]]
+name = "COMECAP 2023"
+date = 2023-09-25
+location = "Athens, Greece"
+title = "Inversion Techniques on Etna’s Volcanic Emissions and the Impact of Aeolus on Quantitative Dispersion Modeling"
+authors = "Anna Kampouri; Vassilis Amiridis; Thanasis Georgiou; Stavros Solomos; Ioannis Binietoglou; Anna Gialitaki; Eleni Marinou; Antonis Gkikas; Emmanouil Proestakis; Michael Rennie et al."
+type = "presentation"
+hasProceedings = true
+url = "https://doi.org/10.3390/environsciproc2023026187"
+
+[[conferences]]
+name = "COMECAP 2023"
+date = 2023-09-25
+location = "Athens, Greece"
+title = "Evaluation of a Commercial Aerosol Lidar Scanner for Urban Pollution Monitoring"
+authors = "Vassilis Kostopoulos; Ourania Soupiona; Georgios Georgoussis; Thanasis Georgiou; Anna Kampouri; Eleni Drakaki; Vassilis Amiridis"
+type = "poster"
+hasProceedings = true
+url = "https://doi.org/10.3390/environsciproc2023026181"
+
+[[conferences]]
+name = "COMECAP 2023"
+date = 2023-09-25
+location = "Athens, Greece"
+title = "Development and Validation of an Enhanced Aerosol Product for Aeolus (L2A+)"
+authors = "Konstantinos Rizos; Antonis Gkikas; Emmanouil Proestakis; Thanasis Georgiou; Vassilis Amiridis; Eleni Marinou; David P. Donovan; Nikos Benas; Martin Stengel; Christian Retscher et al."
+type = "poster"
+hasProceedings = true
+url = "https://doi.org/10.3390/environsciproc2023026091"
 
 [[conferences]]
 name = "Aeolus Science Conference 2023"
