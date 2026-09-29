@@ -1,0 +1,16 @@
+---
+/** One row of a CV section: a date column on the left, details on the right. */
+type Props = { when?: string };
+const { when } = Astro.props;
+---
+
+<li class="grid gap-1 sm:grid-cols-[10.5rem_minmax(0,1fr)] sm:gap-6">
+  <p
+    class="font-display text-sm leading-6 whitespace-nowrap text-subtle tabular-nums"
+  >
+    {when}
+  </p>
+  <div class="max-w-[62ch]">
+    <slot />
+  </div>
+</li>

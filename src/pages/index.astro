@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Isobars from "@/components/Isobars.astro";
-import { PROFILES } from "@/constants";
+import ProfileLinks from "@/components/ProfileLinks.astro";
 import { monthYear, newestFirst } from "@/utils/cv";
 
 // Drop a portrait at src/assets/images/portrait.{jpg,png,webp} and it shows up in the hero.
@@ -87,20 +87,7 @@ const year = (date: Date) => date.getFullYear();
             Researcher in data assimilation and atmospheric composition at the
             National Observatory of Athens.
           </p>
-          <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-display text-sm">
-            {
-              PROFILES.map(({ name, href }) => (
-                <li>
-                  <a
-                    href={href}
-                    class="underline decoration-accent/60 decoration-1 underline-offset-4 hover:text-accent-ink hover:decoration-2"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+          <ProfileLinks class="mt-6" />
         </div>
       </div>
     </section>
@@ -130,10 +117,12 @@ const year = (date: Date) => date.getFullYear();
           </p>
 
           <p>
-            Outside of work, I shoot film, collect and fix old cameras, and
-            tinker with 3D printing and electronics, which occasionally meet in
-            the middle. I also love hiking and on occasion dabble in
-            observational astronomy.
+            Outside of work, <a
+              href="https://www.instagram.com/thanasis.georgiou">I shoot film</a
+            >, collect and fix old cameras, and tinker with 3D printing and
+            electronics, which occasionally meet in the middle. I also love
+            hiking and on occasion dabble in observational astronomy. Some
+            webdev is sprinkled in here from time to time.
           </p>
 
           <p>

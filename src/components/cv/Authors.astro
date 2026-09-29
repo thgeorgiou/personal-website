@@ -1,0 +1,22 @@
+---
+import { parseAuthors } from "@/utils/cv";
+
+type Props = { authors: string };
+const { list, etAl } = parseAuthors(Astro.props.authors);
+---
+
+<p class="mt-1 text-sm leading-snug text-subtle">
+  {
+    list.map(({ name, isMe }, i) => (
+      <>
+        {isMe ? (
+          <strong class="font-semibold text-foreground">{name}</strong>
+        ) : (
+          name
+        )}
+        {i < list.length - 1 && ", "}
+      </>
+    ))
+  }
+  {etAl && <span class="italic"> et al.</span>}
+</p>

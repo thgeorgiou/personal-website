@@ -82,6 +82,7 @@ const conferences = defineCollection({
     isFirstAuthor: z.boolean().default(false),
     type: z.enum(["presentation", "poster"]),
     hasProceedings: z.boolean().default(false),
+    url: z.string().url().optional(),
   }),
 });
 

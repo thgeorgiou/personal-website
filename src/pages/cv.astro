@@ -1,0 +1,168 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Section from "@/components/cv/Section.astro";
+import Entry from "@/components/cv/Entry.astro";
+import Authors from "@/components/cv/Authors.astro";
+import ProfileLinks from "@/components/ProfileLinks.astro";
+import { SITE } from "@/config";
+import { dateRange, monthYear, newestFirst } from "@/utils/cv";
+
+const work = (await getCollection("work")).sort(
+  newestFirst(e => e.data.startDate)
+);
+const education = (await getCollection("education")).sort(
+  newestFirst(e => e.data.startDate)
+);
+const publications = (await getCollection("publication")).sort(
+  newestFirst(e => e.data.publicationDate)
+);
+const conferences = (await getCollection("conferences")).sort(
+  newestFirst(e => e.data.date)
+);
+
+// Publications show their year once, on the first entry of each year
+const pubYear = (i: number) =>
+  publications[i].data.publicationDate.getFullYear();
+const yearLabel = (i: number) =>
+  i === 0 || pubYear(i) !== pubYear(i - 1) ? String(pubYear(i)) : undefined;
+
+const sections = [
+  { id: "experience", title: "Experience", show: work.length > 0 },
+  { id: "education", title: "Education", show: education.length > 0 },
+  { id: "publications", title: "Publications", show: publications.length > 0 },
+  { id: "conferences", title: "Conferences", show: conferences.length > 0 },
+].filter(s => s.show);
+
+const linkClass =
+  "underline decoration-accent/60 decoration-1 underline-offset-4 hover:text-accent-ink hover:decoration-2";
+
+const plural =(n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+---
+
+<Layout
+  title={`CV | ${SITE.author}`}
+  description={`Curriculum vitae of ${SITE.author}: experience, education and publications.`}
+>
+  <Header />
+  <main id="main-content" class="app-layout pb-16">
+    <header class="pt-6 sm:pt-10">
+      <h1
+        class="text-[clamp(2.25rem,6vw,3.5rem)] leading-none font-medium tracking-[-0.04em]"
+      >
+        Curriculum vitae
+      </h1>
+      <ProfileLinks class="mt-5" aria-label="Profiles" />
+      <nav aria-label="Sections" class="mt-6 border-t border-edge pt-4">
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 font-display text-sm">
+          {
+            sections.map(({ id, title }) => (
+              <li>
+                <a href={`#${id}`} class={linkClass}>
+                  {title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
+
+    {
+      work.length > 0 && (
+        <Section id="experience" title="Experience">
+          {work.map(({ data }) => (
+            <Entry when={dateRange(data.startDate, data.endDate)}>
+              <h3 class="font-app leading-snug font-semibold">{data.role}</h3>
+              <p class="text-subtle">{data.name}</p>
+              {data.description && (
+                <p class="mt-2 leading-relaxed">{data.description}</p>
+              )}
+            </Entry>
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      education.length > 0 && (
+        <Section id="education" title="Education">
+          {education.map(({ data }) => (
+            <Entry when={dateRange(data.startDate, data.endDate)}>
+              <h3 class="font-app leading-snug font-semibold">{data.degree}</h3>
+              <p class="text-subtle">{data.institution}</p>
+            </Entry>
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      publications.length > 0 && (
+        <Section
+          id="publications"
+          title="Publications"
+          note={plural(publications.length, "peer-reviewed article")}
+        >
+          {publications.map(({ data }, i) => (
+            <Entry when={yearLabel(i)}>
+              <h3 class="font-app leading-snug font-medium">
+                {data.doi ? (
+                  <a
+                    href={`https://doi.org/${data.doi}`}
+                    class="decoration-accent/60 decoration-1 underline-offset-4 hover:text-accent-ink hover:underline"
+                  >
+                    {data.title}
+                  </a>
+                ) : (
+                  data.title
+                )}
+              </h3>
+              <Authors authors={data.authors} />
+              <p class="mt-1 text-sm leading-snug">
+                <cite>{data.journal}</cite>
+                {data.isFirstAuthor && (
+                  <span class="text-accent-ink">, first author</span>
+                )}
+                {data.doi && (
+                  <span class="block font-display text-xs text-subtle">
+                    doi:{data.doi}
+                  </span>
+                )}
+              </p>
+            </Entry>
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      conferences.length > 0 && (
+        <Section id="conferences" title="Conferences">
+          {conferences.map(({ data }) => (
+            <Entry when={monthYear(data.date)}>
+              <h3 class="font-app leading-snug font-medium">{data.title}</h3>
+              <Authors authors={data.authors} />
+              <p class="mt-1 text-sm leading-snug">
+                {data.type === "poster" ? "Poster" : "Presentation"} at{" "}
+                {data.url ? (
+                  <>
+                    <a href={data.url} class={linkClass}><cite>{data.name}</cite></a>, {data.location}
+                  </>
+                ) : (
+                  <>
+                    <cite>{data.name}</cite>, {data.location}
+                  </>
+                )}
+                {data.hasProceedings && ", with proceedings"}
+              </p>
+            </Entry>
+          ))}
+        </Section>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>

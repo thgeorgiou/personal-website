@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { PROFILES } from "@/constants";
+
+type Props = HTMLAttributes<"ul">;
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<ul
+  class:list={["flex flex-wrap gap-x-5 gap-y-2 font-display text-sm", className]}
+  {...attrs}
+>
+  {
+    PROFILES.map(({ name, href }) => (
+      <li>
+        <a
+          href={href}
+          class="underline decoration-accent/60 decoration-1 underline-offset-4 hover:text-accent-ink hover:decoration-2"
+        >
+          {name}
+        </a>
+      </li>
+    ))
+  }
+</ul>

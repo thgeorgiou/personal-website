@@ -32,11 +32,12 @@ export const SOCIALS: Social[] = [
   },
 ] as const;
 
-// Text links shown under the introduction on the home page
+// Text links shown on the home page and the CV. Entries with an empty href are
+// hidden, so fill them in when you have them.
 export const PROFILES = [
+  { name: "ORCID", href: "https://orcid.org/0000-0002-2940-5672" },
+  { name: "Google Scholar", href: "https://scholar.google.com/citations?user=CxFkOjsAAAAJ" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/thgeorgiou/" },
   { name: "GitHub", href: "https://github.com/thgeorgiou" },
-  // TODO: add your ORCID iD and Google Scholar profile
-  // { name: "ORCID", href: "https://orcid.org/0000-0000-0000-0000" },
-  // { name: "Google Scholar", href: "https://scholar.google.com/citations?user=..." },
   { name: "Email", href: "mailto:web@thgeorgiou.com" },
-] as const;
+].filter(profile => profile.href);

@@ -1,0 +1,254 @@
+# Fields:
+# - name
+# - role
+# - startDate
+# - endDate (optional)
+# - description (plain text)
+[[work]]
+name = "National Observatory of Athens"
+role = "Researcher / Data Scientist"
+startDate = 2023-05-01
+description = "Member of a research team focused on atmospheric composition and numerical weather prediction."
+
+[[work]]
+name = "National Observatory of Athens"
+role = "Software engineer"
+startDate = 2018-03-01
+endDate = 2023-04-30
+description = "Technological support of a research team. Worked on a global aerosol climatology produced from satellite observations, the development of a full-stack observation management platform for the climate change observatory of Antikythera (PANGEA), websites for projects and campaigns, as well as data management and administration of HPC projects under the PRACE framework."
+
+# Fields:
+# - institution
+# - degree
+# - startDate
+# - endDate (optional)
+[[education]]
+institution = "Aristotle University of Thessaloniki"
+degree = "PhD Candidate in Physics"
+startDate = 2023-05-01
+
+[[education]]
+institution = "Athens University of Economics and Business"
+degree = "MSc in Data Science"
+startDate = 2020-09-10
+endDate = 2022-09-01
+
+[[education]]
+institution = "University of West Attica"
+degree = "BSc in Electrical & Electronic Engineering with Integrated MSc"
+startDate = 2014-09-01
+endDate = 2020-09-01
+
+
+# Journal publications
+# Fields:
+# - title
+# - authors (separated by ';', may end in 'et al.')
+# - isFirstAuthor
+# - publicationDate
+# - journal
+# - doi
+[[publication]]
+title = "Derivation and validation of a refined dust product from Aeolus (L2A+)"
+authors = "Konstantinos Rizos; Emmanouil Proestakis; Thanasis Georgiou; Antonis Gkikas; Eleni Marinou; Peristera Paschou; Kalliopi Artemis Voudouri; Athanasios Tsikerdekis; David P. Donovan; Gerd-Jan van Zadelhoff et al."
+isFirstAuthor = false
+publicationDate = 2026-01-28
+journal = "Atmospheric Measurement Techniques"
+doi = "10.5194/amt-19-699-2026"
+
+[[publication]]
+title = "Atmospheric dust and air quality over large-cities and megacities of the world"
+authors = "Emmanouil Proestakis; Kyriakoula Papachristopoulou; Thanasis Georgiou; Sofia Eirini Chatoutsidou; Mihalis Lazaridis; Antonis Gkikas; Ilias Fountoulakis; Ioanna Tsikoudi; Manolis P. Petrakis; Vassilis Amiridis"
+isFirstAuthor = false
+publicationDate = 2025-11-05
+journal = "Atmospheric Chemistry and Physics"
+doi = "10.5194/acp-25-14777-2025"
+
+[[publication]]
+title = "Quantifying dust deposition over the Atlantic Ocean"
+authors = "Emmanouil Proestakis; Vassilis Amiridis; Carlos Pérez García-Pando; Svetlana Tsyro; Jan Griesfeller; Antonis Gkikas; Thanasis Georgiou; María Gonçalves Ageitos; Jeronimo Escribano; Stelios Myriokefalitakis et al."
+isFirstAuthor = false
+publicationDate = 2025-09-05
+journal = "Earth System Science Data"
+doi = "10.5194/essd-17-4351-2025"
+
+[[publication]]
+title = "Volcanic emission estimates from the inversion of ACTRIS lidar observations and their use for quantitative dispersion modeling"
+authors = "Anna Kampouri; Vassilis Amiridis; Thanasis Georgiou; Stavros Solomos; Anna Gialitaki; Maria Tsichla; Michael Rennie; Simona Scollo; Prodromos Zanis"
+isFirstAuthor = false
+publicationDate = 2025-07-14
+journal = "Atmospheric Chemistry and Physics"
+doi = "10.5194/acp-25-7343-2025"
+
+[[publication]]
+title = "CALIPSO Overpasses During Three Atmospheric Pollen Events Detected by Hirst-Type Volumetric Samplers in Two Urban Cities in Greece"
+authors = "Archontoula Karageorgopoulou; Elina Giannakaki; Christos Stathopoulos; Thanasis Georgiou; Eleni Marinou; Vassilis Amiridis; Ioanna Pyrri; Maria-Christina Gatou; Xiaoxia Shang; Athanasios Charalampopoulos et al."
+isFirstAuthor = false
+publicationDate = 2025-03-10
+journal = "Atmosphere"
+doi = "10.3390/atmos16030317"
+
+[[publication]]
+title = "A near-global multiyear climate data record of the fine-mode and coarse-mode components of atmospheric pure dust"
+authors = "Emmanouil Proestakis; Antonis Gkikas; Thanasis Georgiou; Anna Kampouri; Eleni Drakaki; Claire L. Ryder; Franco Marenco; Eleni Marinou; Vassilis Amiridis"
+isFirstAuthor = false
+publicationDate = 2024-06-18
+journal = "Atmospheric Measurement Techniques"
+doi = "10.5194/amt-17-3625-2024"
+
+[[publication]]
+title = "Natural Aerosols, Gaseous Precursors and Their Impacts in Greece: A Review from the Remote Sensing Perspective"
+authors = "Vassilis Amiridis; Stelios Kazadzis; Antonis Gkikas; Kalliopi Artemis Voudouri; Dimitra Kouklaki; Maria-Elissavet Koukouli; Katerina Garane; Aristeidis K. Georgoulias; Stavros Solomos; George Varlas et al."
+isFirstAuthor = false
+publicationDate = 2024-06-01
+journal = "Atmosphere"
+doi = "10.3390/atmos15070753"
+
+[[publication]]
+title = "Assessing Lidar Ratio Impact on CALIPSO Retrievals Utilized for the Estimation of Aerosol SW Radiative Effects across North Africa, the Middle East, and Europe"
+authors = "Anna Moustaka; Marios-Bruno Korras-Carraca; Kyriakoula Papachristopoulou; Michael Stamatis; Ilias Fountoulakis; Stelios Kazadzis; Emmanouil Proestakis; Vassilis Amiridis; Kleareti Tourpali; Thanasis Georgiou et al."
+isFirstAuthor = false
+publicationDate = 2024-05-09
+journal = "Remote Sensing"
+doi = "10.3390/rs16101689"
+
+[[publication]]
+title = "Aeolus winds impact on volcanic ash early warning systems for aviation"
+authors = "Vassilis Amiridis; Anna Kampouri; Antonis Gkikas; Stergios Misios; Anna Gialitaki; Eleni Marinou; Michael Rennie; Angela Benedetti; Stavros Solomos; Prodromos Zanis et al."
+isFirstAuthor = false
+publicationDate = 2023-05-09
+journal = "Scientific Reports"
+doi = "10.1038/s41598-023-34715-6"
+
+[[publication]]
+title = "Polarization lidar for detecting dust orientation: system design and calibration"
+authors = "Alexandra Tsekeri; Vassilis Amiridis; Alexandros Louridas; George Georgoussis; Volker Freudenthaler; Spiros Metallinos; George Doxastakis; Josef Gasteiger; Nikolaos Siomos; Peristera Paschou; Thanasis Georgiou; George Tsaknakis; Christos Evangelatos; and Ioannis Binietoglou"
+isFirstAuthor = false
+publicationDate = 2021-12-01
+journal = "Atmospheric Measurement Techniques"
+doi = "10.5194/amt-14-7453-2021"
+
+# Conference participation & possibly proceedings
+# Fields:
+# - name (conference name)
+# - date (first day)
+# - location
+# - title
+# - authors (separated by ';', may end in 'et al.')
+# - isFirstAuthor
+# - type (presentation, poster)
+# - hasProceedings
+# - url
+[[conferences]]
+name = "ISDA 2026 & WMO DA Symposium"
+date = 2026-09-01
+location = "Nanjing, China"
+title = "Impact of dust optical modelling on atmospheric lidar assimilation"
+authors = "Thanasis Georgiou; Anna Gialitaki; Athanasios Tsikerdekis; Alexandra Tsekeri; Areti Bantouna; Vassilis Spyrakos; Eleni Marinou; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "presentation"
+url = "https://da2026.cms1924.org/en/web/index/32441"
+
+[[conferences]]
+name = "EarthCARE Science and Validation Workshop 2026"
+date = 2026-06-12
+location = "Oxford, United Kingdom"
+title = "Advances in dust optical modelling and EarthCARE Dust Data Assimilation"
+authors = "Thanasis Georgiou; Anna Gialitaki; Athanasios Tsikerdekis; Alexandra Tsekeri; Areti Bantouna; Vassilis Spyrakos; Eleni Marinou; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "presentation"
+url = "https://www.earthcare-science-validation-2026.org/"
+
+[[conferences]]
+name = "AEOLUS Conference 2026"
+date = 2026-04-13
+location = "Lipari, Italy"
+title = "Impact of combined wind and aerosol Aeolus product assimilation"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmanouil Proestakis; Anna Gialitaki; Alexandra Tsekeri; Eleni Marinou; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "presentation"
+url = "https://www.aeolus2026.org"
+
+[[conferences]]
+name = "EarthCARE Science & Validation Workshop 2025"
+date = 2025-12-01
+location = "Tokyo, Japan"
+title = "EarthCARE Data Assimilation in regional dust models and impact on transport"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Alexandra Tsekeri; Anna Gialitaki; Areti Bantouna; Vassilis Spyrakos; Eleni Marinou; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+url = "https://www.eorc.jaxa.jp/EARTHCARE/event/ws2025/index.html"
+
+[[conferences]]
+name = "ESA Living Planet Symposium"
+date = 2025-06-23
+location = "Vienna, Austria"
+title = "Advances in space-borne lidar data assimilation for atmospheric composition and NWP"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Alexandra Tsekeri; Anna Gialitaki; Areti Bantouna; Thanos Kourantos; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+url = "https://lps25.esa.int/"
+
+[[conferences]]
+name = "ISDA 2024"
+date = 2024-10-21
+location = "Kobe, Japan"
+title = "Joint Aerosol & Wind Data Assimilation of AEOLUS and impact on Numerical Weather Prediction"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmanouil Proestakis; Antonis Gkikas; Alexandra Tsekeri; Eleni Drakaki; Anna Kampouri; Holger Baars; Athena Augousta Floutsi; Eleni Marinou; Angela Benedetti; Will McLean; Edward Malina; Christian Retscher; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+url = "https://www.data-assimilation.riken.jp/isda2024/"
+
+[[conferences]]
+name = "IGARSS 2024"
+date = 2024-07-07
+location = "Athens, Greece"
+title = "From AEOLUS to EarthCARE Aerosol Assimilation in Regional Models"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmanouil Proestakis; Antonis Gkikas; Anna Kampouri; Eleni Drakaki; Holger Baars; Athena Augousta Floutsi; Eleni Marinou; Angela Benedetti; Will McLean; Christian Retscher; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "presentation"
+url = "https://2024.ieeeigarss.org/"
+
+[[conferences]]
+name = "ESA ATMOS 2024"
+date = 2024-07-01
+location = "Bologna, Italy"
+title = "Joint Aerosol & Wind Data Assimilation of AEOLUS and preparing for EarthCARE"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmanouil Proestakis; Antonis Gkikas; Alexandra Tsekeri; Eleni Drakaki; Anna Kampouri; Holger Baars; Athena Augousta Floutsi; Eleni Marinou; Angela Benedetti; Will McLean; Christian Retscher; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+hasProceedings = false
+url = "https://www.atmos2024.org/"
+
+[[conferences]]
+name = "EGU 2024"
+date = 2024-04-14
+location = "Vienna, Austria"
+title = "Using AEOLUS Aerosol Assimilation to pave the way for EarthCARE"
+authors = "Thanasis Georgiou; Athanasios Tsikerdekis; Konstantinos Rizos; Emmanouil Proestakis; Antonis Gkikas; Anna Kampouri; Eleni Drakaki; Holger Baars; Athena Augousta Floutsi; Eleni Marinou; Angela Benedetti; Will McLean; Christian Retscher; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+hasProceedings = false
+url = "https://www.egu24.eu/"
+
+[[conferences]]
+name = "COMECAP 2023"
+date = 2023-09-25
+location = "Athens, Greece"
+title = "Utilizing AEOLUS to improve dust transport modelling"
+authors = "Thanasis Georgiou; Konstantinos Rizos; Athanasios Tsikerdekis; Emmanouil Proestakis; Antonis Gkikas; Holger Baars; Athena Augousta Floutsi; Eleni Drakaki; Anna Kampouri; Eleni Marinou; David P. Donovan; Angela Benedetti; Will McLean; Christian Retscher; Dimitris Melas; Vassilis Amiridis"
+isFirstAuthor = true
+type = "presentation"
+hasProceedings = true
+url = "https://www.mdpi.com/2673-4931/26/1/193"
+
+[[conferences]]
+name = "Aeolus Science Conference 2023"
+date = 2023-05-22
+location = "Rhodes, Greece"
+title = "Improvements in Numerical Weather Prediction and Dust Transport modelling through AEOLUS L2A assimilation"
+authors = "Thanasis Georgiou; Emmanouil Proestakis; Antonis Gkikas; Konstantinos Rizos; Eleni Drakaki; Anna Kampouri; Athanasios Tsikerdekis; Holger Baars; Athena Augousta Floutsi; Eleni Marinou; Angela Benedetti; Will McLean; Christian Retscher; Vassilis Amiridis"
+isFirstAuthor = true
+type = "poster"
+hasProceedings = false
+url = "https://www.aeolus2023.org/"
